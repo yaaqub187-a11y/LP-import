@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="Cars Leader — Sprowadzamy auta z USA pod klucz">
 <meta name="twitter:description" content="Licytacja, transport, odprawa celna i dostawa pod dom. Zero ukrytych kosztów.">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%23ffffff'/%3E%3Cpath d='M16 76c10-20 22-34 40-38 20-4 34 0 48-8' stroke='%23101828' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22 88c18 6 58 6 78-4' stroke='%23d0142a' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%23ffffff'/%3E%3Ctext x='60' y='80' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='54' fill='%23d0142a'%3ECL%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -215,7 +215,6 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-5); height:78px; }
 .brand{ display:flex; align-items:center; gap:var(--space-3); font-family:var(--font-head); font-weight:800; letter-spacing:.01em; font-size:1.15rem; text-transform:uppercase; color:var(--ink); }
-.brand-mark{ width:38px; height:38px; flex:none; }
 .brand small{ display:block; font-family:var(--font-body); font-weight:500; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); }
 
 .nav-links{ display:flex; align-items:center; gap:var(--space-6); }
@@ -258,27 +257,15 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 @keyframes floatCar{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
 @media (max-width:640px){ .hero-car-wrap{ display:none; } }
 
-.hero-inner{ position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:var(--space-8); align-items:center; }
-@media (max-width:960px){ .hero-inner{ grid-template-columns:1fr; } }
+.hero-inner{ position:relative; z-index:1; max-width:760px; margin-inline:auto; text-align:center; }
 .hero h1{ font-size:var(--fs-h1); margin-top:var(--space-3); }
 .hero h1 em{ font-style:normal; color:var(--red); }
-.hero-ctas{ display:flex; gap:var(--space-4); margin-top:var(--space-7); flex-wrap:wrap; }
+.hero-ctas{ display:flex; justify-content:center; gap:var(--space-4); margin-top:var(--space-7); flex-wrap:wrap; }
 
 .hero-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-5); margin-top:var(--space-9); padding-top:var(--space-6); border-top:1px solid var(--border); }
 .hero-stat b{ display:block; font-family:var(--font-head); font-size:1.7rem; color:var(--ink); }
 .hero-stat span{ display:block; font-size:.8rem; color:var(--ink-faint); margin-top:2px; }
 @media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); } }
-
-.hero-visual{ position:relative; z-index:1; }
-.hero-card{ background:var(--paper); border:1px solid var(--border); border-radius:var(--radius-lg); padding:var(--space-6); box-shadow:var(--shadow-md); }
-.hero-card-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:var(--space-5); gap:var(--space-3); flex-wrap:wrap; }
-.hero-card-top b{ font-family:var(--font-head); font-size:1.15rem; }
-.hero-card-badge{ display:inline-flex; align-items:center; gap:6px; background:var(--ok-tint); color:var(--ok); padding:4px 10px; border-radius:var(--radius-pill); font-size:.72rem; font-weight:700; }
-.hero-card-badge svg{ width:12px; height:12px; }
-.hero-card-row{ display:flex; align-items:center; justify-content:space-between; padding-block:var(--space-3); border-top:1px solid var(--border-soft); }
-.hero-card-row:first-of-type{ border-top:0; }
-.hero-card-row span:first-child{ color:var(--ink-faint); font-size:.86rem; }
-.hero-card-row span:last-child{ font-family:var(--font-head); font-weight:700; }
 
 /* Trust strip */
 .trust-strip{ background:var(--paper-alt); border-block:1px solid var(--border-soft); }
@@ -298,6 +285,13 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .value-card h3{ font-size:1.05rem; margin-bottom:var(--space-2); }
 .value-card p{ font-size:.92rem; color:var(--ink-soft); }
 .cost-note{ text-align:center; max-width:60ch; margin:var(--space-7) auto 0; color:var(--ink-soft); font-size:.95rem; }
+
+.cost-list{ max-width:720px; margin-inline:auto; border-top:1px solid var(--border); }
+.cost-item{ display:flex; align-items:flex-start; gap:var(--space-5); padding-block:var(--space-6); border-bottom:1px solid var(--border); }
+.cost-item .value-icon{ margin-bottom:0; }
+.cost-item h3{ font-size:1.05rem; margin-bottom:var(--space-2); }
+.cost-item p{ font-size:.92rem; color:var(--ink-soft); }
+@media (max-width:560px){ .cost-item{ gap:var(--space-4); } }
 
 /* Process */
 .process{ background:var(--paper-alt); }
@@ -382,10 +376,6 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#hero">
-      <svg class="brand-mark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M16 76c10-20 22-34 40-38 20-4 34 0 48-8" stroke="#101828" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M22 88c18 6 58 6 78-4" stroke="#d0142a" stroke-width="7" fill="none" stroke-linecap="round"/>
-      </svg>
       <span>Cars Leader<small>Sprowadzamy auta z USA</small></span>
     </a>
 
@@ -450,40 +440,22 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     </div>
 
     <div class="container hero-inner">
-      <div>
-        <p class="eyebrow">Import aut z USA · Obsługa pod klucz</p>
-        <h1>Twoje auto z&nbsp;USA. <em>Bez kompromisów, bez ukrytych kosztów.</em></h1>
-        <p class="lead">Od licytacji na amerykańskiej aukcji, przez transport i odprawę celną, aż po dostawę pod Twój dom. Ponad 500 sprowadzonych aut i pełna transparentność na każdym etapie.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#kontakt">
-            Umów bezpłatną konsultację
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="btn btn-outline" href="#jak-to-dziala">Zobacz, jak to działa</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="hero-stat"><b>500+</b><span>sprowadzonych aut</span></div>
-          <div class="hero-stat"><b>12 lat</b><span>doświadczenia</span></div>
-          <div class="hero-stat"><b>4.9/5</b><span>od 210 klientów</span></div>
-          <div class="hero-stat"><b>100%</b><span>aut z historią CARFAX</span></div>
-        </div>
+      <p class="eyebrow">Import aut z USA · Obsługa pod klucz</p>
+      <h1>Twoje auto z&nbsp;USA. <em>Bez kompromisów, bez ukrytych kosztów.</em></h1>
+      <p class="lead">Od licytacji na amerykańskiej aukcji, przez transport i odprawę celną, aż po dostawę pod Twój dom. Ponad 500 sprowadzonych aut i pełna transparentność na każdym etapie.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#kontakt">
+          Umów bezpłatną konsultację
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-outline" href="#jak-to-dziala">Zobacz, jak to działa</a>
       </div>
 
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <b>Porsche 911 GT3 RS 2023</b>
-            <span class="hero-card-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              CARFAX czysta historia
-            </span>
-          </div>
-          <div class="hero-card-row"><span>Silnik</span><span>4.0 Flat-6</span></div>
-          <div class="hero-card-row"><span>Przebieg</span><span>4 100 mi</span></div>
-          <div class="hero-card-row"><span>Wylicytowano za</span><span>187 500 USD</span></div>
-          <div class="hero-card-row"><span>Status</span><span>W transporcie do Gdyni</span></div>
-        </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>500+</b><span>sprowadzonych aut</span></div>
+        <div class="hero-stat"><b>12 lat</b><span>doświadczenia</span></div>
+        <div class="hero-stat"><b>4.9/5</b><span>od 210 klientów</span></div>
+        <div class="hero-stat"><b>100%</b><span>aut z historią CARFAX</span></div>
       </div>
     </div>
   </section>
@@ -595,55 +567,69 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         <p class="lead">Cena z aukcji to dopiero początek. Tak wygląda pełny rozkład kosztów, zanim auto trafi pod Twój dom — bez pozycji dopisywanych „po fakcie”.</p>
       </div>
 
-      <div class="value-grid reveal-stagger">
-        <div class="value-card reveal">
+      <div class="cost-list">
+        <div class="cost-item reveal">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v16M8 8h6a2.5 2.5 0 0 1 0 5H10a2.5 2.5 0 0 0 0 5h6"/></svg>
           </div>
-          <h3>Cena zakupu na aukcji</h3>
-          <p>Kwota wylicytowana za auto na aukcji typu Copart lub IAAI — punkt wyjścia całego kosztorysu.</p>
+          <div>
+            <h3>Cena zakupu na aukcji</h3>
+            <p>Kwota wylicytowana za auto na aukcji typu Copart lub IAAI — punkt wyjścia całego kosztorysu.</p>
+          </div>
         </div>
-        <div class="value-card reveal">
+        <div class="cost-item reveal">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
           </div>
-          <h3>Opłata aukcyjna</h3>
-          <p>Prowizja stacji aukcyjnej, zwykle kilka procent wylicytowanej kwoty.</p>
+          <div>
+            <h3>Opłata aukcyjna</h3>
+            <p>Prowizja stacji aukcyjnej, zwykle kilka procent wylicytowanej kwoty.</p>
+          </div>
         </div>
-        <div class="value-card reveal">
+        <div class="cost-item reveal">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M6 17V9l6-4 6 4v8"/></svg>
           </div>
-          <h3>Transport oceaniczny</h3>
-          <p>Fracht i ubezpieczenie przesyłki — od portu w USA aż do Gdyni.</p>
+          <div>
+            <h3>Transport oceaniczny</h3>
+            <p>Fracht i ubezpieczenie przesyłki — od portu w USA aż do Gdyni.</p>
+          </div>
         </div>
-        <div class="value-card reveal">
+        <div class="cost-item reveal">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
           </div>
-          <h3>Cło</h3>
-          <p>Standardowa opłata celna dla aut sprowadzanych spoza Unii Europejskiej.</p>
+          <div>
+            <h3>Cło</h3>
+            <p>Standardowa opłata celna dla aut sprowadzanych spoza Unii Europejskiej.</p>
+          </div>
         </div>
-        <div class="value-card reveal">
+        <div class="cost-item reveal">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="8" y1="16" x2="16" y2="8"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="15" r="1"/></svg>
           </div>
-          <h3>Akcyza</h3>
-          <p>Zależna od pojemności silnika — auta elektryczne są z niej zwolnione.</p>
+          <div>
+            <h3>Akcyza</h3>
+            <p>Zależna od pojemności silnika — auta elektryczne są z niej zwolnione.</p>
+          </div>
         </div>
-        <div class="value-card reveal">
+        <div class="cost-item reveal">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z"/><path d="M9 8h6M9 12h6"/></svg>
           </div>
-          <h3>VAT</h3>
-          <p>Podatek naliczany od sumy ceny auta, transportu, cła i akcyzy.</p>
+          <div>
+            <h3>VAT</h3>
+            <p>Podatek naliczany od sumy ceny auta, transportu, cła i akcyzy.</p>
+          </div>
         </div>
-        <div class="value-card reveal">
+        <div class="cost-item reveal">
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l2 2M14 9l2 2"/></svg>
           </div>
-          <h3>Nasza usługa „pod klucz”</h3>
-          <p>Pełna obsługa formalności, transportu i odprawy — jedna, jasno określona kwota.</p>
+          <div>
+            <h3>Nasza usługa „pod klucz”</h3>
+            <p>Pełna obsługa formalności, transportu i odprawy — jedna, jasno określona kwota.</p>
+          </div>
         </div>
       </div>
 
@@ -815,10 +801,6 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   <div class="container footer-grid">
     <div class="footer-brand">
       <a class="brand" href="#hero">
-        <svg class="brand-mark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M16 76c10-20 22-34 40-38 20-4 34 0 48-8" stroke="#101828" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 88c18 6 58 6 78-4" stroke="#d0142a" stroke-width="7" fill="none" stroke-linecap="round"/>
-        </svg>
         <span>Cars Leader</span>
       </a>
       <p>Cars Leader sprowadza auta z amerykańskich aukcji do Polski — licytacja, transport, odprawa i dostawa pod klucz.</p>
