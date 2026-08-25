@@ -246,25 +246,42 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .mobile-menu .btn{ margin-top:var(--space-5); }
 
 /* Hero */
-.hero{ position:relative; overflow:hidden; padding-top:var(--space-9); padding-bottom:var(--space-9); }
+.hero{
+  position:relative; overflow:hidden; color:#fff;
+  padding-top:var(--space-9); padding-bottom:var(--space-9);
+  background:
+    radial-gradient(1200px 700px at 15% 110%, rgba(255,106,0,.16), transparent 60%),
+    radial-gradient(900px 600px at 90% -10%, rgba(255,43,63,.22), transparent 60%),
+    linear-gradient(180deg, #0a0e16 0%, #0a0b0d 55%, #050609 100%);
+}
 .hero-scene{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-.hero-glow{ position:absolute; border-radius:50%; filter:blur(100px); }
-.hero-glow.g1{ width:560px; height:560px; background:var(--red); opacity:.10; top:-220px; right:-160px; }
-.hero-glow.g2{ width:420px; height:420px; background:#101828; opacity:.05; bottom:-200px; left:-140px; }
+
+.hero-ghost{ position:absolute; inset:0; z-index:0; display:flex; align-items:center; justify-content:center; overflow:hidden; pointer-events:none; }
+.hero-ghost span{ font-family:var(--font-head); font-weight:900; font-size:clamp(7rem,26vw,20rem); letter-spacing:.02em; color:#fff; opacity:.07; mix-blend-mode:overlay; white-space:nowrap; }
 
 .hero-car-wrap{ position:absolute; right:-4%; bottom:-6%; width:min(400px,80%); animation:floatCar 4.5s ease-in-out infinite; }
 .hero-car-wrap svg{ width:100%; height:auto; overflow:visible; }
+.hero-car-glow{ position:absolute; left:48%; bottom:6%; width:55%; height:60px; background:radial-gradient(ellipse at center, rgba(255,106,0,.55), transparent 70%); transform:translateX(-50%); animation:glowPulse 2.6s ease-in-out infinite; }
 @keyframes floatCar{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
+@keyframes glowPulse{ 0%,100%{ opacity:.55; } 50%{ opacity:.95; } }
 @media (max-width:640px){ .hero-car-wrap{ display:none; } }
+
+.hero-badge{ display:flex; width:fit-content; margin-inline:auto; align-items:center; gap:8px; padding:8px 16px; margin-bottom:var(--space-6); border:1px solid rgba(255,255,255,.22); border-radius:var(--radius-pill); background:rgba(255,255,255,.05); backdrop-filter:blur(6px); font-family:var(--font-head); font-weight:700; font-size:.78rem; letter-spacing:.08em; color:#fff; }
+.hero-badge b{ color:var(--red-bright); }
 
 .hero-inner{ position:relative; z-index:1; max-width:760px; margin-inline:auto; text-align:center; }
 .hero h1{ font-size:var(--fs-h1); margin-top:var(--space-3); }
-.hero h1 em{ font-style:normal; color:var(--red); }
+.hero h1 em{ font-style:normal; color:var(--red-bright); }
+.hero .eyebrow{ color:var(--red-bright); }
+.hero .eyebrow::before{ background:var(--red-bright); }
+.hero .lead{ color:rgba(255,255,255,.72); }
+.hero .btn-outline{ color:#fff; border-color:rgba(255,255,255,.32); }
+.hero .btn-outline:hover{ border-color:var(--red-bright); color:var(--red-bright); }
 .hero-ctas{ display:flex; justify-content:center; gap:var(--space-4); margin-top:var(--space-7); flex-wrap:wrap; }
 
-.hero-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-5); margin-top:var(--space-9); padding-top:var(--space-6); border-top:1px solid var(--border); }
-.hero-stat b{ display:block; font-family:var(--font-head); font-size:1.7rem; color:var(--ink); }
-.hero-stat span{ display:block; font-size:.8rem; color:var(--ink-faint); margin-top:2px; }
+.hero-stats{ position:relative; z-index:1; display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-5); margin-top:var(--space-9); padding-top:var(--space-6); border-top:1px solid rgba(255,255,255,.15); }
+.hero-stat b{ display:block; font-family:var(--font-head); font-size:1.7rem; color:#fff; }
+.hero-stat span{ display:block; font-size:.8rem; color:rgba(255,255,255,.5); margin-top:2px; }
 @media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); } }
 
 /* Trust strip */
@@ -417,18 +434,18 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
+    <div class="hero-ghost" aria-hidden="true"><span>USA</span></div>
     <div class="hero-scene" aria-hidden="true">
-      <div class="hero-glow g1"></div>
-      <div class="hero-glow g2"></div>
       <div class="hero-car-wrap">
+        <div class="hero-car-glow"></div>
         <svg viewBox="0 0 480 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M36 150 L64 108 Q74 92 96 92 L344 92 Q366 92 378 108 L406 150" stroke="#d0142a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M150 92 L172 48 Q178 38 192 38 L268 38 Q284 38 292 50 L330 92" stroke="#d0142a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           <line x1="222" y1="38" x2="222" y2="92" stroke="#d0142a" stroke-width="2"/>
           <rect x="22" y="150" width="406" height="28" rx="13" stroke="#d0142a" stroke-width="3" fill="none"/>
-          <circle cx="100" cy="178" r="22" fill="#fff" stroke="#d0142a" stroke-width="3"/>
+          <circle cx="100" cy="178" r="22" fill="#0a0b0d" stroke="#d0142a" stroke-width="3"/>
           <circle cx="100" cy="178" r="7" fill="#d0142a"/>
-          <circle cx="350" cy="178" r="22" fill="#fff" stroke="#d0142a" stroke-width="3"/>
+          <circle cx="350" cy="178" r="22" fill="#0a0b0d" stroke="#d0142a" stroke-width="3"/>
           <circle cx="350" cy="178" r="7" fill="#d0142a"/>
           <line x1="12" y1="150" x2="36" y2="150" stroke="#d0142a" stroke-width="3" stroke-linecap="round"/>
           <line x1="406" y1="150" x2="430" y2="150" stroke="#d0142a" stroke-width="3" stroke-linecap="round"/>
@@ -440,6 +457,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     </div>
 
     <div class="container hero-inner">
+      <span class="hero-badge">(CARS LEADER<b>®</b>)</span>
       <p class="eyebrow">Import aut z USA · Obsługa pod klucz</p>
       <h1>Twoje auto z&nbsp;USA. <em>Bez kompromisów, bez ukrytych kosztów.</em></h1>
       <p class="lead">Od licytacji na amerykańskiej aukcji, przez transport i odprawę celną, aż po dostawę pod Twój dom. Ponad 500 sprowadzonych aut i pełna transparentność na każdym etapie.</p>
