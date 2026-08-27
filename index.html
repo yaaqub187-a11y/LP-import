@@ -276,25 +276,25 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .hero-photo{
   position:absolute; inset:-2%; z-index:0; pointer-events:none;
   background-image:url("assets/hero-porsche.jpg");
-  background-size:cover; background-position:center 40%; background-repeat:no-repeat;
-  filter:blur(1.2px) brightness(.74) saturate(1.1);
+  background-size:cover; background-position:center 58%; background-repeat:no-repeat;
+  filter:blur(1.1px) brightness(.86) saturate(1.05);
 }
 @media (max-width:640px){ .hero-photo{ background-image:url("assets/hero-porsche-mobile.jpg"); } }
 .hero-dim{
   position:absolute; inset:0; z-index:0; pointer-events:none;
   background:
-    radial-gradient(820px 480px at 50% 34%, rgba(3,4,7,.68) 0%, rgba(3,4,7,.38) 48%, transparent 75%),
-    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.14), transparent 60%),
-    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.16), transparent 60%),
-    linear-gradient(180deg, rgba(5,6,9,.16) 0%, rgba(5,6,9,.14) 38%, rgba(5,6,9,.72) 100%);
+    radial-gradient(820px 480px at 50% 30%, rgba(3,4,7,.6) 0%, rgba(3,4,7,.34) 48%, transparent 75%),
+    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.12), transparent 60%),
+    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.14), transparent 60%),
+    linear-gradient(180deg, rgba(5,6,9,.28) 0%, rgba(5,6,9,.18) 38%, rgba(5,6,9,.68) 100%);
 }
 @media (max-width:640px){
-  .hero-photo{ filter:blur(1px) brightness(.7) saturate(1.1); background-position:center 36%; }
+  .hero-photo{ filter:blur(.9px) brightness(.82) saturate(1.05); background-position:center 52%; }
   .hero-dim{ background:
-    radial-gradient(560px 420px at 50% 30%, rgba(3,4,7,.72) 0%, rgba(3,4,7,.4) 50%, transparent 78%),
-    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.14), transparent 60%),
-    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.16), transparent 60%),
-    linear-gradient(180deg, rgba(5,6,9,.2) 0%, rgba(5,6,9,.18) 38%, rgba(5,6,9,.78) 100%);
+    radial-gradient(560px 420px at 50% 26%, rgba(3,4,7,.64) 0%, rgba(3,4,7,.36) 50%, transparent 78%),
+    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.12), transparent 60%),
+    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.14), transparent 60%),
+    linear-gradient(180deg, rgba(5,6,9,.32) 0%, rgba(5,6,9,.22) 38%, rgba(5,6,9,.74) 100%);
   }
 }
 
@@ -307,30 +307,32 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .hero-rotator{ position:relative; display:block; height:1.15em; margin-block:.05em; overflow:hidden; }
 .hero-rotator-item{
   position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-  font-style:normal; white-space:nowrap; opacity:0; transform:translateY(35%);
-  transition:opacity .5s var(--ease-out), transform .5s var(--ease-out);
+  font-style:normal; white-space:nowrap; opacity:0; transform:translateY(14%);
+  transition:opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 .hero-rotator-item:nth-child(1){ color:#5ea6ff; }
 .hero-rotator-item:nth-child(2){ color:var(--red-bright); }
 .hero-rotator-item.is-active{ opacity:1; transform:translateY(0); }
-.hero-rotator-item.is-leaving{ opacity:0; transform:translateY(-35%); }
+.hero-rotator-item.is-leaving{ opacity:0; transform:translateY(-14%); }
 .hero .lead{ color:rgba(255,255,255,.72); }
 .hero .btn-outline{ color:#fff; border-color:rgba(255,255,255,.32); }
 .hero .btn-outline:hover{ border-color:var(--red-bright); color:var(--red-bright); }
 .hero-ctas{ display:flex; justify-content:center; gap:var(--space-4); margin-top:var(--space-7); flex-wrap:wrap; }
 
+.hero-stats-wrap{ position:relative; z-index:1; margin-top:var(--space-9); }
 .hero-stats{
-  position:relative; z-index:1; display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-5);
-  margin-top:var(--space-9); padding:var(--space-6) var(--space-5);
+  display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-5);
+  max-width:980px; margin-inline:auto; padding:var(--space-6) var(--space-6);
   background:rgba(6,7,12,.5); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-lg);
 }
-.hero-stat{ display:flex; flex-direction:column; align-items:center; }
-.hero-stat-icon{ display:flex; align-items:center; justify-content:center; width:44px; height:44px; margin-bottom:var(--space-3); border-radius:50%; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); color:var(--red-bright); }
-.hero-stat-icon svg{ width:21px; height:21px; }
-.hero-stat b{ display:block; font-family:var(--font-head); font-weight:800; font-size:clamp(1.9rem, 1.6rem + 1vw, 2.5rem); line-height:1.05; color:#fff; font-variant-numeric:tabular-nums; }
-.hero-stat span{ display:block; font-size:.8rem; color:rgba(255,255,255,.55); margin-top:2px; }
-@media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); padding:var(--space-5) var(--space-4); } }
+.hero-stat{ display:flex; align-items:center; gap:var(--space-3); text-align:left; min-width:0; }
+.hero-stat-icon{ flex:none; display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1.5px solid rgba(255,43,63,.45); color:var(--red-bright); }
+.hero-stat-icon svg{ width:20px; height:20px; }
+.hero-stat-body{ min-width:0; }
+.hero-stat b{ display:block; font-family:var(--font-head); font-weight:800; font-size:clamp(1.5rem, 1.2rem + .9vw, 1.9rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
+.hero-stat span{ display:block; font-size:.78rem; color:rgba(255,255,255,.55); margin-top:1px; }
+@media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-5); padding:var(--space-5) var(--space-4); } }
 
 /* Trust strip */
 .trust-strip{ background:var(--paper-alt); border-block:1px solid var(--border-soft); }
@@ -505,35 +507,45 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         </a>
         <a class="btn btn-outline" href="#jak-to-dziala">Zobacz, jak to działa</a>
       </div>
+    </div>
 
+    <div class="container hero-stats-wrap">
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="hero-stat-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h-.8A1.2 1.2 0 0 1 3 14.8v-1.6c0-.4.1-.8.4-1.1L5 10l1.6-2.7A2 2 0 0 1 8.3 6.3h7.4a2 2 0 0 1 1.7 1L19 10l1.6 2.1c.3.3.4.7.4 1.1v1.6A1.2 1.2 0 0 1 19.8 16H19"/><path d="M5 16h14"/><circle cx="8.2" cy="16" r="1.7"/><circle cx="15.8" cy="16" r="1.7"/></svg>
           </span>
-          <b><span class="count-up" data-target="500" data-suffix="+">0</span></b>
-          <span>sprowadzonych aut</span>
+          <span class="hero-stat-body">
+            <b><span class="count-up" data-target="500" data-suffix="+">0</span></b>
+            <span>sprowadzonych aut</span>
+          </span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9.5h16"/><path d="M8.5 3v4M15.5 3v4"/></svg>
           </span>
-          <b><span class="count-up" data-target="12" data-suffix=" lat">0</span></b>
-          <span>doświadczenia</span>
+          <span class="hero-stat-body">
+            <b><span class="count-up" data-target="12" data-suffix=" lat">0</span></b>
+            <span>doświadczenia</span>
+          </span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l2.2 4.9 5.3.6-4 3.7.9 5.3L12 15.9 7.6 18.5l.9-5.3-4-3.7 5.3-.6L12 4z"/></svg>
           </span>
-          <b><span class="count-up" data-target="4.9" data-decimals="1" data-suffix="/5">0</span></b>
-          <span>od 210 klientów</span>
+          <span class="hero-stat-body">
+            <b><span class="count-up" data-target="4.9" data-decimals="1" data-suffix="/5">0</span></b>
+            <span>od 210 klientów</span>
+          </span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l6.5 2.4v5.4c0 4.4-2.7 7.4-6.5 8.2-3.8-.8-6.5-3.8-6.5-8.2V6.4L12 4z"/><path d="M9 12.2l2 2 4-4.2"/></svg>
           </span>
-          <b><span class="count-up" data-target="100" data-suffix="%">0</span></b>
-          <span>aut z historią CARFAX</span>
+          <span class="hero-stat-body">
+            <b><span class="count-up" data-target="100" data-suffix="%">0</span></b>
+            <span>aut z historią CARFAX</span>
+          </span>
         </div>
       </div>
     </div>
@@ -1017,8 +1029,8 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         rotatorItems[activeIndex].classList.add("is-active");
         window.setTimeout(function (el) {
           el.classList.remove("is-leaving");
-        }, 520, current);
-      }, 2400);
+        }, 1020, current);
+      }, 3200);
     }
   }
 
