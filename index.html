@@ -3,24 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cars Leader — Sprowadzamy auta z USA pod klucz</title>
-<meta name="description" content="Cars Leader sprowadza Twoje wymarzone auto z amerykańskich aukcji: licytacja, transport, odprawa celna i dostawa pod dom. Pełna historia CARFAX i transparentny kosztorys bez ukrytych opłat.">
-<meta name="keywords" content="import aut z usa, sprowadzanie samochodów z ameryki, aukcje samochodowe usa, copart, iaai, cło na auto z usa, transport samochodu z usa, cars leader">
+<title>Znalezione Sprowadzone — Sprowadzamy auta z USA pod klucz</title>
+<meta name="description" content="Znalezione Sprowadzone sprowadza Twoje wymarzone auto z amerykańskich aukcji: licytacja, transport, odprawa celna i dostawa pod dom. Pełna historia CARFAX i transparentny kosztorys bez ukrytych opłat.">
+<meta name="keywords" content="import aut z usa, sprowadzanie samochodów z ameryki, aukcje samochodowe usa, copart, iaai, cło na auto z usa, transport samochodu z usa, znalezione sprowadzone">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.carsleader.com/">
+<link rel="canonical" href="https://www.znalezionesprowadzone.pl/">
 <meta name="theme-color" content="#ffffff">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
-<meta property="og:site_name" content="Cars Leader">
-<meta property="og:title" content="Cars Leader — Sprowadzamy auta z USA pod klucz">
+<meta property="og:site_name" content="Znalezione Sprowadzone">
+<meta property="og:title" content="Znalezione Sprowadzone — Sprowadzamy auta z USA pod klucz">
 <meta property="og:description" content="Licytacja, transport, odprawa celna i dostawa pod dom. Pełna historia CARFAX i transparentny kosztorys bez ukrytych opłat.">
-<meta property="og:url" content="https://www.carsleader.com/">
+<meta property="og:url" content="https://www.znalezionesprowadzone.pl/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cars Leader — Sprowadzamy auta z USA pod klucz">
+<meta name="twitter:title" content="Znalezione Sprowadzone — Sprowadzamy auta z USA pod klucz">
 <meta name="twitter:description" content="Licytacja, transport, odprawa celna i dostawa pod dom. Zero ukrytych kosztów.">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%23ffffff'/%3E%3Ctext x='60' y='80' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='54' fill='%23d0142a'%3ECL%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,12 +33,12 @@
 {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
-  "name": "Cars Leader",
-  "legalName": "Cars Leader Sylwester Błoński",
+  "name": "Znalezione Sprowadzone",
+  "legalName": "Znalezione Sprowadzone Sylwester Błoński",
   "description": "Import samochodów z aukcji w USA: licytacja, transport, odprawa celna i dostawa pod klucz.",
-  "url": "https://www.carsleader.com/",
+  "url": "https://www.znalezionesprowadzone.pl/",
   "telephone": "+48888880398",
-  "email": "kontakt@carsleader.com",
+  "email": "kontakt@znalezionesprowadzone.pl",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ul. Wolności 63",
@@ -215,6 +218,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-5); height:78px; }
 .brand{ display:flex; align-items:center; gap:var(--space-3); font-family:var(--font-head); font-weight:800; letter-spacing:.01em; font-size:1.15rem; text-transform:uppercase; color:var(--ink); }
+.brand-mark{ flex:none; width:40px; height:40px; object-fit:contain; }
 .brand small{ display:block; font-family:var(--font-body); font-weight:500; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); }
 
 .nav-links{ display:flex; align-items:center; gap:var(--space-6); }
@@ -231,6 +235,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 @media (max-width:960px){ .nav-links, .nav-phone{ display:none; } .nav-toggle{ display:inline-flex; } }
 @media (max-width:480px){
   .brand{ font-size:.9rem; gap:var(--space-2); }
+  .brand-mark{ width:32px; height:32px; }
   .brand small{ display:none; }
   .nav-actions .btn-sm{ display:none; }
 }
@@ -255,27 +260,55 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   position:absolute; inset:-2%; z-index:0; pointer-events:none;
   background-image:url("assets/hero-porsche.jpg");
   background-size:cover; background-position:center 42%; background-repeat:no-repeat;
-  filter:blur(2.5px) brightness(.62) saturate(1.05);
+  filter:blur(.8px) brightness(.8) saturate(1.1);
 }
 .hero-dim{
   position:absolute; inset:0; z-index:0; pointer-events:none;
   background:
-    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.16), transparent 60%),
-    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.2), transparent 60%),
-    linear-gradient(180deg, rgba(5,6,9,.3) 0%, rgba(5,6,9,.42) 45%, rgba(5,6,9,.88) 100%);
+    radial-gradient(820px 480px at 50% 34%, rgba(3,4,7,.68) 0%, rgba(3,4,7,.38) 48%, transparent 75%),
+    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.14), transparent 60%),
+    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.16), transparent 60%),
+    linear-gradient(180deg, rgba(5,6,9,.16) 0%, rgba(5,6,9,.14) 38%, rgba(5,6,9,.72) 100%);
 }
-@media (max-width:640px){ .hero-photo{ filter:blur(1.8px) brightness(.58) saturate(1.05); background-position:center 38%; } }
-.hero-ghost{ position:absolute; inset:0; z-index:0; display:flex; align-items:center; justify-content:center; overflow:hidden; pointer-events:none; }
-.hero-ghost span{ font-family:var(--font-head); font-weight:900; font-size:clamp(7rem,26vw,20rem); letter-spacing:.02em; color:#fff; opacity:.07; mix-blend-mode:overlay; white-space:nowrap; }
+@media (max-width:640px){
+  .hero-photo{ filter:blur(.6px) brightness(.76) saturate(1.1); background-position:center 38%; }
+  .hero-dim{ background:
+    radial-gradient(560px 420px at 50% 30%, rgba(3,4,7,.72) 0%, rgba(3,4,7,.4) 50%, transparent 78%),
+    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.14), transparent 60%),
+    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.16), transparent 60%),
+    linear-gradient(180deg, rgba(5,6,9,.2) 0%, rgba(5,6,9,.18) 38%, rgba(5,6,9,.78) 100%);
+  }
+}
 
 .hero-badge{ display:flex; width:fit-content; margin-inline:auto; align-items:center; gap:8px; padding:8px 16px; margin-bottom:var(--space-6); border:1px solid rgba(255,255,255,.22); border-radius:var(--radius-pill); background:rgba(255,255,255,.05); backdrop-filter:blur(6px); font-family:var(--font-head); font-weight:700; font-size:.78rem; letter-spacing:.08em; color:#fff; }
 .hero-badge b{ color:var(--red-bright); }
 
 .hero-inner{ position:relative; z-index:1; max-width:760px; margin-inline:auto; text-align:center; }
 .hero h1{ font-size:var(--fs-h1); margin-top:var(--space-3); }
-.hero h1 em{ font-style:normal; color:var(--red-bright); }
+.hero h1 em{ font-style:normal; color:var(--red-bright); display:block; }
 .hero .eyebrow{ color:var(--red-bright); }
 .hero .eyebrow::before{ background:var(--red-bright); }
+
+.hero-rotator{ position:relative; display:block; height:1.15em; margin-block:.05em; overflow:hidden; }
+.hero-rotator-item{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-style:normal; white-space:nowrap; opacity:0; transform:translateY(35%);
+  animation:heroRotate 4.4s ease-in-out infinite;
+}
+.hero-rotator-item.is-rot-a{ color:#5ea6ff; }
+.hero-rotator-item.is-rot-b{ color:var(--red-bright); animation-delay:-2.2s; }
+@keyframes heroRotate{
+  0%   { opacity:0; transform:translateY(35%); }
+  10%  { opacity:1; transform:translateY(0); }
+  45%  { opacity:1; transform:translateY(0); }
+  55%  { opacity:0; transform:translateY(-35%); }
+  100% { opacity:0; transform:translateY(35%); }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-rotator{ height:auto; }
+  .hero-rotator-item{ position:static; opacity:1; transform:none; animation:none; display:inline; }
+  .hero-rotator-item.is-rot-b::before{ content:" / "; color:#fff; }
+}
 .hero .lead{ color:rgba(255,255,255,.72); }
 .hero .btn-outline{ color:#fff; border-color:rgba(255,255,255,.32); }
 .hero .btn-outline:hover{ border-color:var(--red-bright); color:var(--red-bright); }
@@ -395,7 +428,8 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#hero">
-      <span>Cars Leader<small>Sprowadzamy auta z USA</small></span>
+      <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
+      <span>Znalezione Sprowadzone<small>Sprowadzamy auta z USA</small></span>
     </a>
 
     <nav class="nav-links" aria-label="Menu główne">
@@ -409,7 +443,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     <div class="nav-actions">
       <a class="nav-phone" href="tel:+48888880398">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5c0 9 7 16 16 16l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-5 2z"/></svg>
-        Paweł: 888 880 398
+        Kontakt: 888 880 398
       </a>
       <a class="btn btn-primary btn-sm" href="#kontakt">Bezpłatna wycena</a>
       <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -427,7 +461,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   <a href="#kontakt">Kontakt</a>
   <a class="nav-phone" href="tel:+48888880398">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5c0 9 7 16 16 16l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-5 2z"/></svg>
-    Paweł: 888 880 398
+    Kontakt: 888 880 398
   </a>
   <a class="btn btn-primary btn-block" href="#kontakt">Bezpłatna wycena</a>
 </div>
@@ -438,12 +472,18 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   <section class="hero" id="hero">
     <div class="hero-photo" aria-hidden="true"></div>
     <div class="hero-dim" aria-hidden="true"></div>
-    <div class="hero-ghost" aria-hidden="true"><span>USA</span></div>
 
     <div class="container hero-inner">
-      <span class="hero-badge">(CARS LEADER<b>®</b>)</span>
+      <span class="hero-badge">(ZNALEZIONE SPROWADZONE<b>®</b>)</span>
       <p class="eyebrow">Import aut z USA · Obsługa pod klucz</p>
-      <h1>Twoje auto z&nbsp;USA. <em>Bez kompromisów, bez ukrytych kosztów.</em></h1>
+      <h1>Twoje auto z&nbsp;USA.
+        <span class="hero-rotator" aria-hidden="true">
+          <span class="hero-rotator-item is-rot-a">Znalezione</span>
+          <span class="hero-rotator-item is-rot-b">Sprowadzone</span>
+        </span>
+        <span class="visually-hidden">Znalezione, sprowadzone.</span>
+        <em>Bez kompromisów, bez ukrytych kosztów.</em>
+      </h1>
       <p class="lead">Od licytacji na amerykańskiej aukcji, przez transport i odprawę celną, aż po dostawę pod Twój dom. Ponad 500 sprowadzonych aut i pełna transparentność na każdym etapie.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#kontakt">
@@ -660,7 +700,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
       <div class="testi-track reveal" role="list">
         <article class="testi-card" role="listitem">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>„Liczyłem się z tym, że sprowadzenie 911 zza oceanu to loteria. U Cars Leader było odwrotnie — każdy etap potwierdzony, a raport CARFAX zgadzał się z autem co do słowa.”</p>
+          <p>„Liczyłem się z tym, że sprowadzenie 911 zza oceanu to loteria. W Znalezione Sprowadzone było odwrotnie — każdy etap potwierdzony, a raport CARFAX zgadzał się z autem co do słowa.”</p>
           <div class="testi-person">
             <div class="testi-avatar">MP</div>
             <div><b>Marek P.</b><span>Sokołów Podlaski · Porsche 911 Carrera S</span></div>
@@ -775,20 +815,20 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         <div class="contact-ctas">
           <a class="btn btn-primary btn-lg" href="tel:+48888880398">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5c0 9 7 16 16 16l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-5 2z"/></svg>
-            Zadzwoń: Paweł, 888 880 398
+            Zadzwoń: 888 880 398
           </a>
-          <a class="btn btn-outline btn-lg" href="mailto:kontakt@carsleader.com">Napisz e-mail</a>
+          <a class="btn btn-outline btn-lg" href="mailto:kontakt@znalezionesprowadzone.pl">Napisz e-mail</a>
         </div>
       </div>
 
       <div class="contact-methods reveal">
         <div class="contact-method">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5c0 9 7 16 16 16l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-5 2z"/></svg></span>
-          <div><b>Paweł · +48 888 880 398</b><span>Pon–Pt 9:00–18:00, Sob 10:00–14:00</span></div>
+          <div><b>Kontakt · +48 888 880 398</b><span>Pon–Pt 9:00–18:00, Sob 10:00–14:00</span></div>
         </div>
         <div class="contact-method">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
-          <div><b>kontakt@carsleader.com</b><span>Odpowiedź w ciągu 24h</span></div>
+          <div><b>kontakt@znalezionesprowadzone.pl</b><span>Odpowiedź w ciągu 24h</span></div>
         </div>
         <div class="contact-method">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span>
@@ -803,9 +843,10 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   <div class="container footer-grid">
     <div class="footer-brand">
       <a class="brand" href="#hero">
-        <span>Cars Leader</span>
+        <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
+        <span>Znalezione Sprowadzone</span>
       </a>
-      <p>Cars Leader sprowadza auta z amerykańskich aukcji do Polski — licytacja, transport, odprawa i dostawa pod klucz.</p>
+      <p>Znalezione Sprowadzone sprowadza auta z amerykańskich aukcji do Polski — licytacja, transport, odprawa i dostawa pod klucz.</p>
       <div class="footer-social">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.6" cy="7.4" r=".6" fill="currentColor" stroke="none"/></svg></a>
@@ -832,15 +873,14 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     <div>
       <h4>Kontakt</h4>
       <ul>
-        <li><a href="tel:+48888880398">Paweł · 888 880 398</a></li>
-        <li><a href="mailto:kontakt@carsleader.com">kontakt@carsleader.com</a></li>
+        <li><a href="tel:+48888880398">Kontakt · 888 880 398</a></li>
+        <li><a href="mailto:kontakt@znalezionesprowadzone.pl">kontakt@znalezionesprowadzone.pl</a></li>
         <li><span>ul. Wolności 63, 08-300 Sokołów Podlaski</span></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>&copy; <span id="year">2026</span> Cars Leader Sylwester Błoński. Wszelkie prawa zastrzeżone.</span>
-    <span>NIP: 823-157-84-30</span>
+    <span>&copy; <span id="year">2026</span> Znalezione Sprowadzone Sylwester Błoński. Wszelkie prawa zastrzeżone.</span>
   </div>
 </footer>
 
