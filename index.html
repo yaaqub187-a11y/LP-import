@@ -251,27 +251,22 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   padding-top:var(--space-9); padding-bottom:var(--space-9);
   background:#06070b;
 }
-.hero-cityscape{ position:absolute; inset:-2% -2%; z-index:0; overflow:hidden; pointer-events:none; filter:blur(2.5px) saturate(1.08) brightness(.6); }
-.hero-cityscape svg{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+.hero-photo{
+  position:absolute; inset:-2%; z-index:0; pointer-events:none;
+  background-image:url("assets/hero-porsche.jpg");
+  background-size:cover; background-position:center 42%; background-repeat:no-repeat;
+  filter:blur(2.5px) brightness(.62) saturate(1.05);
+}
 .hero-dim{
   position:absolute; inset:0; z-index:0; pointer-events:none;
   background:
-    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.18), transparent 60%),
-    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.24), transparent 60%),
-    linear-gradient(180deg, rgba(5,6,9,.25) 0%, rgba(5,6,9,.52) 45%, rgba(5,6,9,.92) 100%);
+    radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.16), transparent 60%),
+    radial-gradient(900px 600px at 90% -15%, rgba(255,43,63,.2), transparent 60%),
+    linear-gradient(180deg, rgba(5,6,9,.3) 0%, rgba(5,6,9,.42) 45%, rgba(5,6,9,.88) 100%);
 }
-@media (max-width:640px){ .hero-cityscape{ filter:blur(2px) saturate(1.08) brightness(.56); } }
-.hero-scene{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-
+@media (max-width:640px){ .hero-photo{ filter:blur(1.8px) brightness(.58) saturate(1.05); background-position:center 38%; } }
 .hero-ghost{ position:absolute; inset:0; z-index:0; display:flex; align-items:center; justify-content:center; overflow:hidden; pointer-events:none; }
 .hero-ghost span{ font-family:var(--font-head); font-weight:900; font-size:clamp(7rem,26vw,20rem); letter-spacing:.02em; color:#fff; opacity:.07; mix-blend-mode:overlay; white-space:nowrap; }
-
-.hero-car-wrap{ position:absolute; right:-4%; bottom:-6%; width:min(400px,80%); animation:floatCar 4.5s ease-in-out infinite; }
-.hero-car-wrap svg{ width:100%; height:auto; overflow:visible; }
-.hero-car-glow{ position:absolute; left:48%; bottom:6%; width:55%; height:60px; background:radial-gradient(ellipse at center, rgba(255,106,0,.55), transparent 70%); transform:translateX(-50%); animation:glowPulse 2.6s ease-in-out infinite; }
-@keyframes floatCar{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
-@keyframes glowPulse{ 0%,100%{ opacity:.55; } 50%{ opacity:.95; } }
-@media (max-width:640px){ .hero-car-wrap{ display:none; } }
 
 .hero-badge{ display:flex; width:fit-content; margin-inline:auto; align-items:center; gap:8px; padding:8px 16px; margin-bottom:var(--space-6); border:1px solid rgba(255,255,255,.22); border-radius:var(--radius-pill); background:rgba(255,255,255,.05); backdrop-filter:blur(6px); font-family:var(--font-head); font-weight:700; font-size:.78rem; letter-spacing:.08em; color:#fff; }
 .hero-badge b{ color:var(--red-bright); }
@@ -441,112 +436,9 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <div class="hero-cityscape" aria-hidden="true">
-      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#03040a"/>
-            <stop offset=".6" stop-color="#070a14"/>
-            <stop offset="1" stop-color="#0b0f1a"/>
-          </linearGradient>
-          <linearGradient id="heroRoad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#15171d"/>
-            <stop offset="1" stop-color="#030405"/>
-          </linearGradient>
-          <linearGradient id="heroRail" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#4a4e57"/>
-            <stop offset="1" stop-color="#1b1d22"/>
-          </linearGradient>
-          <linearGradient id="heroStreak" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
-            <stop offset=".5" stop-color="#ffffff" stop-opacity=".8"/>
-            <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-          </linearGradient>
-          <pattern id="heroWinCool" width="18" height="14" patternUnits="userSpaceOnUse">
-            <rect x="2" y="2" width="5" height="7" fill="#7fe3ff" opacity=".5"/>
-            <rect x="10" y="4" width="4" height="6" fill="#bff2ff" opacity=".3"/>
-          </pattern>
-          <pattern id="heroWinWarm" width="18" height="14" patternUnits="userSpaceOnUse">
-            <rect x="2" y="2" width="5" height="7" fill="#ffd28a" opacity=".45"/>
-            <rect x="10" y="5" width="4" height="5" fill="#8fe3ff" opacity=".35"/>
-          </pattern>
-        </defs>
-
-        <rect x="0" y="0" width="1600" height="900" fill="url(#heroSky)"/>
-
-        <g>
-          <rect x="40" y="260" width="90" height="300" fill="#0c1220"/>
-          <rect x="52" y="280" width="66" height="260" fill="url(#heroWinCool)"/>
-
-          <polygon points="150,560 150,220 165,180 180,220 180,560" fill="#0a0e18"/>
-          <rect x="154" y="230" width="22" height="310" fill="url(#heroWinCool)"/>
-
-          <rect x="230" y="340" width="110" height="220" fill="#0e1422"/>
-          <rect x="242" y="360" width="86" height="184" fill="url(#heroWinWarm)"/>
-
-          <rect x="360" y="140" width="70" height="420" fill="#0a0e18"/>
-          <rect x="370" y="160" width="50" height="380" fill="url(#heroWinCool)"/>
-          <line x1="395" y1="140" x2="395" y2="95" stroke="#2c313c" stroke-width="3"/>
-          <circle cx="395" cy="90" r="4" fill="#ff2b3f"/>
-
-          <rect x="450" y="380" width="130" height="180" fill="#0c1220"/>
-          <rect x="464" y="398" width="102" height="146" fill="url(#heroWinCool)"/>
-
-          <rect x="610" y="220" width="80" height="340" fill="#0e1422"/>
-          <rect x="622" y="238" width="56" height="304" fill="url(#heroWinWarm)"/>
-
-          <rect x="710" y="420" width="150" height="140" fill="#0a0e18"/>
-          <rect x="726" y="436" width="118" height="108" fill="url(#heroWinCool)"/>
-          <path d="M712 430 Q785 400 858 430" stroke="#ffd28a" stroke-width="3" stroke-linecap="round" fill="none" opacity=".55"/>
-
-          <polygon points="1010,560 1010,160 1080,160 1150,200 1150,560" fill="#0c1220"/>
-          <rect x="1024" y="220" width="112" height="320" fill="url(#heroWinCool)"/>
-
-          <rect x="1180" y="340" width="100" height="220" fill="#0e1422"/>
-          <rect x="1192" y="358" width="76" height="186" fill="url(#heroWinWarm)"/>
-
-          <rect x="1310" y="250" width="160" height="310" fill="#0a0e18"/>
-          <rect x="1326" y="268" width="128" height="276" fill="url(#heroWinCool)"/>
-
-          <rect x="1500" y="380" width="100" height="180" fill="#0c1220"/>
-          <rect x="1512" y="396" width="76" height="148" fill="url(#heroWinWarm)"/>
-        </g>
-
-        <rect x="0" y="555" width="1600" height="55" fill="url(#heroRail)"/>
-        <line x1="0" y1="565" x2="1600" y2="565" stroke="#5a5e67" stroke-width="1.5" opacity=".6"/>
-        <line x1="0" y1="590" x2="1600" y2="590" stroke="#101216" stroke-width="1.5" opacity=".7"/>
-
-        <rect x="0" y="610" width="1600" height="290" fill="url(#heroRoad)"/>
-        <polygon points="760,612 840,612 1020,900 620,900" fill="#1c1e24" opacity=".5"/>
-        <polygon points="785,614 815,614 900,900 720,900" fill="#ffffff" opacity=".12"/>
-
-        <rect x="120" y="700" width="480" height="6" fill="url(#heroStreak)" opacity=".8"/>
-        <rect x="60" y="760" width="620" height="4" fill="url(#heroStreak)" opacity=".55"/>
-        <rect x="900" y="820" width="520" height="5" fill="url(#heroStreak)" opacity=".5"/>
-      </svg>
-    </div>
+    <div class="hero-photo" aria-hidden="true"></div>
     <div class="hero-dim" aria-hidden="true"></div>
     <div class="hero-ghost" aria-hidden="true"><span>USA</span></div>
-    <div class="hero-scene" aria-hidden="true">
-      <div class="hero-car-wrap">
-        <div class="hero-car-glow"></div>
-        <svg viewBox="0 0 480 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M36 150 L64 108 Q74 92 96 92 L344 92 Q366 92 378 108 L406 150" stroke="#d0142a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M150 92 L172 48 Q178 38 192 38 L268 38 Q284 38 292 50 L330 92" stroke="#d0142a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="222" y1="38" x2="222" y2="92" stroke="#d0142a" stroke-width="2"/>
-          <rect x="22" y="150" width="406" height="28" rx="13" stroke="#d0142a" stroke-width="3" fill="none"/>
-          <circle cx="100" cy="178" r="22" fill="#0a0b0d" stroke="#d0142a" stroke-width="3"/>
-          <circle cx="100" cy="178" r="7" fill="#d0142a"/>
-          <circle cx="350" cy="178" r="22" fill="#0a0b0d" stroke="#d0142a" stroke-width="3"/>
-          <circle cx="350" cy="178" r="7" fill="#d0142a"/>
-          <line x1="12" y1="150" x2="36" y2="150" stroke="#d0142a" stroke-width="3" stroke-linecap="round"/>
-          <line x1="406" y1="150" x2="430" y2="150" stroke="#d0142a" stroke-width="3" stroke-linecap="round"/>
-          <line x1="356" y1="92" x2="356" y2="66" stroke="#d0142a" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="392" y1="92" x2="392" y2="66" stroke="#d0142a" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M350 66 Q374 60 398 66" stroke="#d0142a" stroke-width="3" fill="none" stroke-linecap="round"/>
-        </svg>
-      </div>
-    </div>
 
     <div class="container hero-inner">
       <span class="hero-badge">(CARS LEADER<b>®</b>)</span>
