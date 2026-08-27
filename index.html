@@ -7,7 +7,10 @@
 <meta name="description" content="Znalezione Sprowadzone sprowadza Twoje wymarzone auto z amerykańskich aukcji: licytacja, transport, odprawa celna i dostawa pod dom. Pełna historia CARFAX i transparentny kosztorys bez ukrytych opłat.">
 <meta name="keywords" content="import aut z usa, sprowadzanie samochodów z ameryki, aukcje samochodowe usa, copart, iaai, cło na auto z usa, transport samochodu z usa, znalezione sprowadzone">
 <meta name="robots" content="index, follow">
+<meta name="author" content="Znalezione Sprowadzone">
 <link rel="canonical" href="https://www.znalezionesprowadzone.pl/">
+<link rel="alternate" hreflang="pl-PL" href="https://www.znalezionesprowadzone.pl/">
+<link rel="alternate" hreflang="x-default" href="https://www.znalezionesprowadzone.pl/">
 <meta name="theme-color" content="#ffffff">
 
 <meta property="og:type" content="website">
@@ -16,9 +19,14 @@
 <meta property="og:title" content="Znalezione Sprowadzone — Sprowadzamy auta z USA pod klucz">
 <meta property="og:description" content="Licytacja, transport, odprawa celna i dostawa pod dom. Pełna historia CARFAX i transparentny kosztorys bez ukrytych opłat.">
 <meta property="og:url" content="https://www.znalezionesprowadzone.pl/">
+<meta property="og:image" content="https://www.znalezionesprowadzone.pl/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Porsche 911 GT3 RS sprowadzony z USA przez Znalezione Sprowadzone">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Znalezione Sprowadzone — Sprowadzamy auta z USA pod klucz">
 <meta name="twitter:description" content="Licytacja, transport, odprawa celna i dostawa pod dom. Zero ukrytych kosztów.">
+<meta name="twitter:image" content="https://www.znalezionesprowadzone.pl/assets/og-image.jpg">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
@@ -28,6 +36,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-porsche.jpg" media="(min-width: 641px)">
+<link rel="preload" as="image" href="assets/hero-porsche-mobile.jpg" media="(max-width: 640px)">
 
 <script type="application/ld+json">
 {
@@ -35,8 +45,10 @@
   "@type": "AutomotiveBusiness",
   "name": "Znalezione Sprowadzone",
   "legalName": "Znalezione Sprowadzone Sylwester Błoński",
-  "description": "Import samochodów z aukcji w USA: licytacja, transport, odprawa celna i dostawa pod klucz.",
+  "description": "Autoryzowany oddział IAA w Sokołowie Podlaskim. Import samochodów z aukcji w USA: licytacja, transport, odprawa celna i dostawa pod klucz.",
   "url": "https://www.znalezionesprowadzone.pl/",
+  "logo": "https://www.znalezionesprowadzone.pl/assets/logo-full.png",
+  "image": "https://www.znalezionesprowadzone.pl/assets/og-image.jpg",
   "telephone": "+48888880398",
   "email": "kontakt@znalezionesprowadzone.pl",
   "address": {
@@ -262,6 +274,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   background-size:cover; background-position:center 42%; background-repeat:no-repeat;
   filter:blur(.8px) brightness(.8) saturate(1.1);
 }
+@media (max-width:640px){ .hero-photo{ background-image:url("assets/hero-porsche-mobile.jpg"); } }
 .hero-dim{
   position:absolute; inset:0; z-index:0; pointer-events:none;
   background:
@@ -280,9 +293,6 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   }
 }
 
-.hero-badge{ display:flex; width:fit-content; margin-inline:auto; align-items:center; gap:8px; padding:8px 16px; margin-bottom:var(--space-6); border:1px solid rgba(255,255,255,.22); border-radius:var(--radius-pill); background:rgba(255,255,255,.05); backdrop-filter:blur(6px); font-family:var(--font-head); font-weight:700; font-size:.78rem; letter-spacing:.08em; color:#fff; }
-.hero-badge b{ color:var(--red-bright); }
-
 .hero-inner{ position:relative; z-index:1; max-width:760px; margin-inline:auto; text-align:center; }
 .hero h1{ font-size:var(--fs-h1); margin-top:var(--space-3); }
 .hero h1 em{ font-style:normal; color:var(--red-bright); display:block; }
@@ -293,21 +303,16 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .hero-rotator-item{
   position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   font-style:normal; white-space:nowrap; opacity:0; transform:translateY(35%);
-  animation:heroRotate 4.4s ease-in-out infinite;
+  transition:opacity .5s var(--ease-out), transform .5s var(--ease-out);
 }
-.hero-rotator-item.is-rot-a{ color:#5ea6ff; }
-.hero-rotator-item.is-rot-b{ color:var(--red-bright); animation-delay:-2.2s; }
-@keyframes heroRotate{
-  0%   { opacity:0; transform:translateY(35%); }
-  10%  { opacity:1; transform:translateY(0); }
-  45%  { opacity:1; transform:translateY(0); }
-  55%  { opacity:0; transform:translateY(-35%); }
-  100% { opacity:0; transform:translateY(35%); }
-}
+.hero-rotator-item:nth-child(1){ color:#5ea6ff; }
+.hero-rotator-item:nth-child(2){ color:var(--red-bright); }
+.hero-rotator-item.is-active{ opacity:1; transform:translateY(0); }
+.hero-rotator-item.is-leaving{ opacity:0; transform:translateY(-35%); }
 @media (prefers-reduced-motion: reduce){
   .hero-rotator{ height:auto; }
-  .hero-rotator-item{ position:static; opacity:1; transform:none; animation:none; display:inline; }
-  .hero-rotator-item.is-rot-b::before{ content:" / "; color:#fff; }
+  .hero-rotator-item{ position:static; opacity:1; transform:none; transition:none; display:inline; }
+  .hero-rotator-item:nth-child(2)::before{ content:" / "; color:#fff; }
 }
 .hero .lead{ color:rgba(255,255,255,.72); }
 .hero .btn-outline{ color:#fff; border-color:rgba(255,255,255,.32); }
@@ -315,7 +320,10 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .hero-ctas{ display:flex; justify-content:center; gap:var(--space-4); margin-top:var(--space-7); flex-wrap:wrap; }
 
 .hero-stats{ position:relative; z-index:1; display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-5); margin-top:var(--space-9); padding-top:var(--space-6); border-top:1px solid rgba(255,255,255,.15); }
-.hero-stat b{ display:block; font-family:var(--font-head); font-size:1.7rem; color:#fff; }
+.hero-stat{ display:flex; flex-direction:column; align-items:center; }
+.hero-stat-icon{ display:flex; align-items:center; justify-content:center; width:40px; height:40px; margin-bottom:var(--space-2); border-radius:50%; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); color:var(--red-bright); }
+.hero-stat-icon svg{ width:19px; height:19px; }
+.hero-stat b{ display:block; font-family:var(--font-head); font-size:1.7rem; color:#fff; font-variant-numeric:tabular-nums; }
 .hero-stat span{ display:block; font-size:.8rem; color:rgba(255,255,255,.5); margin-top:2px; }
 @media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); } }
 
@@ -385,12 +393,12 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 /* Contact */
 .contact{ background:var(--paper-alt); }
 .contact-ctas{ display:flex; gap:var(--space-4); flex-wrap:wrap; margin-top:var(--space-7); }
-.contact-methods{ margin-top:var(--space-8); display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-5); }
+.contact-methods{ margin-top:var(--space-8); display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-5); min-width:0; }
 @media (max-width:820px){ .contact-methods{ grid-template-columns:1fr; max-width:420px; margin-inline:auto; } }
-.contact-method{ background:var(--paper); border:1px solid var(--border); border-radius:var(--radius-md); padding:var(--space-6); display:flex; flex-direction:column; align-items:center; text-align:center; gap:var(--space-3); }
+.contact-method{ min-width:0; background:var(--paper); border:1px solid var(--border); border-radius:var(--radius-md); padding:var(--space-6); display:flex; flex-direction:column; align-items:center; text-align:center; gap:var(--space-3); }
 .contact-method .icon{ width:52px; height:52px; border-radius:50%; background:var(--red-tint); display:flex; align-items:center; justify-content:center; }
 .contact-method .icon svg{ width:22px; height:22px; color:var(--red-deep); }
-.contact-method b{ font-size:1rem; }
+.contact-method b{ font-size:1rem; overflow-wrap:anywhere; }
 .contact-method span{ display:block; font-size:.85rem; color:var(--ink-faint); margin-top:2px; }
 
 /* Footer */
@@ -400,6 +408,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 @media (max-width:480px){ .footer-grid{ grid-template-columns:1fr; } }
 .footer-brand{ color:var(--ink); }
 .footer-brand p{ margin-top:var(--space-4); font-size:.88rem; max-width:32ch; color:var(--ink-soft); }
+.footer-authorized{ display:inline-flex; align-items:center; gap:6px; margin-top:var(--space-3) !important; padding:6px 12px; border-radius:var(--radius-pill); background:var(--red-tint); color:var(--red-deep); font-size:.78rem; font-weight:600; max-width:none !important; }
 .footer h4{ color:var(--ink); font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:var(--space-4); }
 .footer ul li{ margin-bottom:var(--space-3); }
 .footer a{ font-size:.9rem; transition:color var(--dur-fast) var(--ease-out); }
@@ -412,7 +421,8 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 /* Mobile sticky CTA */
 .mobile-cta{ position:fixed; left:0; right:0; bottom:0; z-index:90; display:none; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); padding:var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom)); gap:var(--space-3); border-top:1px solid var(--border); }
 @media (max-width:768px){ .mobile-cta{ display:flex; } body{ padding-bottom:76px; } }
-.mobile-cta a{ flex:1; }
+.mobile-cta a{ flex:1; min-width:0; padding-inline:var(--space-3); }
+@media (max-width:380px){ .mobile-cta a{ font-size:.86rem; padding-inline:10px; } }
 
 /* Reveal */
 .reveal{ opacity:0; transform:translateY(18px); transition:opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
@@ -429,7 +439,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   <div class="container nav-inner">
     <a class="brand" href="#hero">
       <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
-      <span>Znalezione Sprowadzone<small>Sprowadzamy auta z USA</small></span>
+      <span>Znalezione Sprowadzone<small>Autoryzowany oddział IAA</small></span>
     </a>
 
     <nav class="nav-links" aria-label="Menu główne">
@@ -474,12 +484,11 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     <div class="hero-dim" aria-hidden="true"></div>
 
     <div class="container hero-inner">
-      <span class="hero-badge">(ZNALEZIONE SPROWADZONE<b>®</b>)</span>
       <p class="eyebrow">Import aut z USA · Obsługa pod klucz</p>
       <h1>Twoje auto z&nbsp;USA.
         <span class="hero-rotator" aria-hidden="true">
-          <span class="hero-rotator-item is-rot-a">Znalezione</span>
-          <span class="hero-rotator-item is-rot-b">Sprowadzone</span>
+          <span class="hero-rotator-item is-active">Znalezione</span>
+          <span class="hero-rotator-item">Sprowadzone</span>
         </span>
         <span class="visually-hidden">Znalezione, sprowadzone.</span>
         <em>Bez kompromisów, bez ukrytych kosztów.</em>
@@ -494,10 +503,34 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
       </div>
 
       <div class="hero-stats">
-        <div class="hero-stat"><b>500+</b><span>sprowadzonych aut</span></div>
-        <div class="hero-stat"><b>12 lat</b><span>doświadczenia</span></div>
-        <div class="hero-stat"><b>4.9/5</b><span>od 210 klientów</span></div>
-        <div class="hero-stat"><b>100%</b><span>aut z historią CARFAX</span></div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v3a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-.5h-9V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-3Z"/><circle cx="7" cy="17.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="17" cy="17.5" r="1.3" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <b><span class="count-up" data-target="500" data-suffix="+">0</span></b>
+          <span>sprowadzonych aut</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 3v4M16 3v4"/></svg>
+          </span>
+          <b><span class="count-up" data-target="12" data-suffix=" lat">0</span></b>
+          <span>doświadczenia</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9L12 3.5z"/></svg>
+          </span>
+          <b><span class="count-up" data-target="4.9" data-decimals="1" data-suffix="/5">0</span></b>
+          <span>od 210 klientów</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <b><span class="count-up" data-target="100" data-suffix="%">0</span></b>
+          <span>aut z historią CARFAX</span>
+        </div>
       </div>
     </div>
   </section>
@@ -847,6 +880,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         <span>Znalezione Sprowadzone</span>
       </a>
       <p>Znalezione Sprowadzone sprowadza auta z amerykańskich aukcji do Polski — licytacja, transport, odprawa i dostawa pod klucz.</p>
+      <p class="footer-authorized">Jesteśmy autoryzowanym oddziałem IAA Sokołów Podlaski.</p>
       <div class="footer-social">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.6" cy="7.4" r=".6" fill="currentColor" stroke="none"/></svg></a>
@@ -965,6 +999,64 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  var rotator = document.querySelector(".hero-rotator");
+  if (rotator && !prefersReducedMotion) {
+    var rotatorItems = rotator.querySelectorAll(".hero-rotator-item");
+    if (rotatorItems.length > 1) {
+      var activeIndex = 0;
+      setInterval(function () {
+        var current = rotatorItems[activeIndex];
+        current.classList.remove("is-active");
+        current.classList.add("is-leaving");
+        activeIndex = (activeIndex + 1) % rotatorItems.length;
+        rotatorItems[activeIndex].classList.add("is-active");
+        window.setTimeout(function (el) {
+          el.classList.remove("is-leaving");
+        }, 520, current);
+      }, 2400);
+    }
+  }
+
+  var counters = document.querySelectorAll(".count-up");
+  if (counters.length) {
+    var animateCount = function (el) {
+      var target = parseFloat(el.getAttribute("data-target"));
+      var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+      var suffix = el.getAttribute("data-suffix") || "";
+      if (prefersReducedMotion || isNaN(target)) {
+        el.textContent = target.toFixed(decimals) + suffix;
+        return;
+      }
+      var duration = 1500;
+      var start = null;
+      var step = function (ts) {
+        if (start === null) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = (target * eased).toFixed(decimals) + suffix;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          el.textContent = target.toFixed(decimals) + suffix;
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+    if ("IntersectionObserver" in window) {
+      var counterIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            counterIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.6 });
+      counters.forEach(function (el) { counterIo.observe(el); });
+    } else {
+      counters.forEach(animateCount);
+    }
+  }
 })();
 </script>
 </body>
