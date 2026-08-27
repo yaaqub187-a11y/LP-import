@@ -326,13 +326,10 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   background:rgba(6,7,12,.5); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-lg);
 }
-.hero-stat{ display:flex; align-items:center; gap:var(--space-3); text-align:left; min-width:0; }
-.hero-stat-icon{ flex:none; display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1.5px solid rgba(255,43,63,.45); color:var(--red-bright); }
-.hero-stat-icon svg{ width:20px; height:20px; }
-.hero-stat-body{ min-width:0; }
-.hero-stat b{ display:block; font-family:var(--font-head); font-weight:800; font-size:clamp(1.5rem, 1.2rem + .9vw, 1.9rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
-.hero-stat span{ display:block; font-size:.78rem; color:rgba(255,255,255,.55); margin-top:1px; }
-@media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-5); padding:var(--space-5) var(--space-4); } }
+.hero-stat{ text-align:center; min-width:0; }
+.hero-stat b{ display:block; font-family:var(--font-head); font-weight:800; font-size:clamp(2.1rem, 1.7rem + 1.4vw, 2.8rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
+.hero-stat span{ display:block; font-size:.85rem; color:rgba(255,255,255,.55); margin-top:var(--space-1); }
+@media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); padding:var(--space-5) var(--space-4); } }
 
 /* Trust strip */
 .trust-strip{ background:var(--paper-alt); border-block:1px solid var(--border-soft); }
@@ -512,40 +509,20 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     <div class="container hero-stats-wrap">
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h-.8A1.2 1.2 0 0 1 3 14.8v-1.6c0-.4.1-.8.4-1.1L5 10l1.6-2.7A2 2 0 0 1 8.3 6.3h7.4a2 2 0 0 1 1.7 1L19 10l1.6 2.1c.3.3.4.7.4 1.1v1.6A1.2 1.2 0 0 1 19.8 16H19"/><path d="M5 16h14"/><circle cx="8.2" cy="16" r="1.7"/><circle cx="15.8" cy="16" r="1.7"/></svg>
-          </span>
-          <span class="hero-stat-body">
-            <b><span class="count-up" data-target="500" data-suffix="+">0</span></b>
-            <span>sprowadzonych aut</span>
-          </span>
+          <b><span class="count-up" data-target="500" data-suffix="+">0</span></b>
+          <span>sprowadzonych aut</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9.5h16"/><path d="M8.5 3v4M15.5 3v4"/></svg>
-          </span>
-          <span class="hero-stat-body">
-            <b><span class="count-up" data-target="12" data-suffix=" lat">0</span></b>
-            <span>doświadczenia</span>
-          </span>
+          <b><span class="count-up" data-target="12" data-suffix=" lat">0</span></b>
+          <span>doświadczenia</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l2.2 4.9 5.3.6-4 3.7.9 5.3L12 15.9 7.6 18.5l.9-5.3-4-3.7 5.3-.6L12 4z"/></svg>
-          </span>
-          <span class="hero-stat-body">
-            <b><span class="count-up" data-target="4.9" data-decimals="1" data-suffix="/5">0</span></b>
-            <span>od 210 klientów</span>
-          </span>
+          <b><span class="count-up" data-target="4.9" data-decimals="1" data-suffix="/5">0</span></b>
+          <span>od 210 klientów</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l6.5 2.4v5.4c0 4.4-2.7 7.4-6.5 8.2-3.8-.8-6.5-3.8-6.5-8.2V6.4L12 4z"/><path d="M9 12.2l2 2 4-4.2"/></svg>
-          </span>
-          <span class="hero-stat-body">
-            <b><span class="count-up" data-target="100" data-suffix="%">0</span></b>
-            <span>aut z historią CARFAX</span>
-          </span>
+          <b><span class="count-up" data-target="100" data-suffix="%">0</span></b>
+          <span>aut z historią CARFAX</span>
         </div>
       </div>
     </div>
