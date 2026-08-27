@@ -327,8 +327,8 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-lg);
 }
 .hero-stat{ text-align:center; min-width:0; }
-.hero-stat b{ display:block; font-family:var(--font-head); font-weight:800; font-size:clamp(2.1rem, 1.7rem + 1.4vw, 2.8rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
-.hero-stat span{ display:block; font-size:.85rem; color:rgba(255,255,255,.55); margin-top:var(--space-1); }
+.hero-stat b{ display:block; font-family:var(--font-head); font-weight:800; letter-spacing:-.01em; font-size:clamp(2.6rem, 2rem + 2.4vw, 4rem); line-height:1; color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.4); font-variant-numeric:tabular-nums; }
+.hero-stat > span{ display:block; font-size:.92rem; font-weight:500; color:rgba(255,255,255,.68); margin-top:var(--space-2); }
 @media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); padding:var(--space-5) var(--space-4); } }
 
 /* Trust strip */
@@ -1021,7 +1021,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         el.textContent = target.toFixed(decimals) + suffix;
         return;
       }
-      var duration = 1500;
+      var duration = 2600;
       var start = null;
       var step = function (ts) {
         if (start === null) start = ts;
