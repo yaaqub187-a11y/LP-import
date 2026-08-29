@@ -35,9 +35,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/hero-porsche.jpg" media="(min-width: 641px)">
-<link rel="preload" as="image" href="assets/hero-porsche-mobile.jpg" media="(max-width: 640px)">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="image" fetchpriority="high" href="assets/hero-porsche.jpg" media="(min-width: 641px)">
+<link rel="preload" as="image" fetchpriority="high" href="assets/hero-porsche-mobile.jpg" media="(max-width: 640px)">
 
 <script type="application/ld+json">
 {
@@ -327,7 +329,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-lg);
 }
 .hero-stat{ text-align:center; min-width:0; }
-.hero-stat b{ display:block; font-family:var(--font-body); font-weight:500; font-size:clamp(1.5rem, 1.25rem + 1.1vw, 1.95rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
+.hero-stat b{ display:block; font-family:var(--font-head); font-weight:600; font-size:clamp(1.5rem, 1.25rem + 1.1vw, 1.95rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
 .hero-stat > span{ display:block; font-size:.92rem; font-weight:500; color:rgba(255,255,255,.68); margin-top:var(--space-2); }
 @media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); padding:var(--space-5) var(--space-4); } }
 
@@ -377,10 +379,9 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .testi-card{ scroll-snap-align:start; flex:0 0 min(380px,86vw); background:var(--paper); border:1px solid var(--border); border-radius:var(--radius-md); padding:var(--space-6); display:flex; flex-direction:column; }
 .stars{ display:flex; gap:3px; color:var(--red); margin-bottom:var(--space-4); }
 .testi-card p{ color:var(--ink-soft); font-size:.95rem; flex:1; }
-.testi-person{ display:flex; align-items:center; gap:var(--space-3); margin-top:var(--space-5); }
-.testi-avatar{ width:44px; height:44px; border-radius:50%; background:var(--ink); color:var(--red-bright); display:flex; align-items:center; justify-content:center; font-family:var(--font-head); font-weight:800; flex:none; }
+.testi-person{ margin-top:var(--space-5); padding-top:var(--space-4); border-top:1px solid var(--border-soft); }
 .testi-person b{ display:block; font-size:.92rem; }
-.testi-person span{ display:block; font-size:.8rem; color:var(--ink-faint); }
+.testi-person span{ display:block; font-size:.8rem; color:var(--ink-faint); margin-top:2px; }
 
 /* FAQ */
 .faq-list{ max-width:820px; margin-inline:auto; }
@@ -396,7 +397,9 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 
 /* Contact */
 .contact{ background:var(--paper-alt); }
-.contact-ctas{ display:flex; gap:var(--space-4); flex-wrap:wrap; margin-top:var(--space-7); }
+.contact-ctas{ display:flex; justify-content:center; align-items:stretch; gap:var(--space-4); flex-wrap:wrap; margin-top:var(--space-7); }
+.contact-ctas .btn{ flex:1 1 240px; max-width:320px; }
+@media (max-width:480px){ .contact-ctas .btn{ flex-basis:100%; } }
 .contact-methods{ margin-top:var(--space-8); display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-5); min-width:0; }
 @media (max-width:820px){ .contact-methods{ grid-template-columns:1fr; max-width:420px; margin-inline:auto; } }
 .contact-method{ min-width:0; background:var(--paper); border:1px solid var(--border); border-radius:var(--radius-md); padding:var(--space-6); display:flex; flex-direction:column; align-items:center; text-align:center; gap:var(--space-3); }
@@ -418,8 +421,9 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .footer a{ font-size:.9rem; transition:color var(--dur-fast) var(--ease-out); }
 .footer a:hover{ color:var(--red); }
 .footer-social{ display:flex; gap:var(--space-3); margin-top:var(--space-5); }
-.footer-social a{ width:38px; height:38px; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--ink); }
-.footer-social svg{ width:16px; height:16px; }
+.footer-social a{ width:46px; height:46px; border-radius:50%; border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--ink); background:var(--paper); transition:all var(--dur-fast) var(--ease-out); }
+.footer-social a:hover{ background:var(--red); border-color:var(--red); color:#fff; transform:translateY(-2px); box-shadow:var(--shadow-red); }
+.footer-social svg{ width:20px; height:20px; }
 .footer-bottom{ margin-top:var(--space-8); padding-top:var(--space-6); border-top:1px solid var(--border); display:flex; justify-content:space-between; gap:var(--space-4); flex-wrap:wrap; font-size:.8rem; }
 
 /* Mobile sticky CTA */
@@ -427,6 +431,21 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 @media (max-width:768px){ .mobile-cta{ display:flex; } body{ padding-bottom:76px; } }
 .mobile-cta a{ flex:1; min-width:0; padding-inline:var(--space-3); }
 @media (max-width:380px){ .mobile-cta a{ font-size:.86rem; padding-inline:10px; } }
+
+/* Cookie consent banner */
+.cookie-banner{
+  position:fixed; left:0; right:0; bottom:0; z-index:110;
+  background:var(--ink); color:#fff; padding:var(--space-4) var(--space-5);
+  transform:translateY(110%); transition:transform var(--dur-med) var(--ease-out);
+  box-shadow:0 -8px 24px -8px rgba(16,24,40,.25);
+}
+.cookie-banner.is-visible{ transform:translateY(0); }
+.cookie-banner-inner{ max-width:var(--container); margin-inline:auto; display:flex; align-items:center; justify-content:space-between; gap:var(--space-5); flex-wrap:wrap; }
+.cookie-banner p{ margin:0; font-size:.85rem; line-height:1.5; color:rgba(255,255,255,.82); max-width:70ch; }
+.cookie-banner a{ color:#fff; text-decoration:underline; text-underline-offset:2px; }
+.cookie-banner-actions{ flex:none; display:flex; gap:var(--space-3); }
+@media (max-width:768px){ .cookie-banner{ bottom:76px; } }
+@media (max-width:560px){ .cookie-banner-inner{ flex-direction:column; align-items:stretch; } .cookie-banner-actions{ justify-content:stretch; } .cookie-banner-actions .btn{ flex:1; } }
 
 /* Reveal */
 .reveal{ opacity:0; transform:translateY(18px); transition:opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
@@ -442,7 +461,10 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#hero">
-      <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
+      <picture>
+        <source srcset="assets/logo-icon.webp" type="image/webp">
+        <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
+      </picture>
       <span>Znalezione Sprowadzone<small>Autoryzowany oddział IAA</small></span>
     </a>
 
@@ -728,48 +750,42 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
           <div class="stars" aria-hidden="true">★★★★★</div>
           <p>„Liczyłem się z tym, że sprowadzenie 911 zza oceanu to loteria. W Znalezione Sprowadzone było odwrotnie — każdy etap potwierdzony, a raport CARFAX zgadzał się z autem co do słowa.”</p>
           <div class="testi-person">
-            <div class="testi-avatar">MP</div>
             <div><b>Marek P.</b><span>Sokołów Podlaski · Porsche 911 Carrera S</span></div>
           </div>
         </article>
         <article class="testi-card" role="listitem">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>„Bałem się kupować auto zza oceanu, ale każdy etap był opisany i potwierdzony. Odebrałem Raptora dokładnie w umówionym terminie.”</p>
+          <p>„Bałem się kupować auto zza oceanu, ale każdy etap był opisany i potwierdzony. Odebrałem swoje BMW dokładnie w umówionym terminie, bez żadnych niespodzianek.”</p>
           <div class="testi-person">
-            <div class="testi-avatar">MK</div>
-            <div><b>Michał K.</b><span>Warszawa · Ford F-150 Raptor</span></div>
+            <div><b>Michał K.</b><span>Siedlce · BMW F30 330i</span></div>
           </div>
         </article>
         <article class="testi-card" role="listitem">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>„Kosztorys na starcie zgadzał się co do złotówki z fakturą końcową. To dla mnie było najważniejsze — żadnych dopłat w ostatniej chwili.”</p>
+          <p>„Kosztorys na starcie zgadzał się co do złotówki z fakturą końcową. Zero dopłat w ostatniej chwili — dokładnie to, czego szukałam.”</p>
           <div class="testi-person">
-            <div class="testi-avatar">AN</div>
-            <div><b>Anna N.</b><span>Kraków · Tesla Model Y</span></div>
+            <div><b>Anna N.</b><span>Sokołów Podlaski · Tesla Model Y</span></div>
           </div>
         </article>
         <article class="testi-card" role="listitem">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>„Oszczędziłem około 30% względem podobnej oferty w Polsce, mimo cła i akcyzy. Cały proces zajął 7 tygodni, dokładnie tyle, ile zapowiedzieli.”</p>
+          <p>„Szukałem Giulii Quadrifoglio pół roku po polskich komisach. Tutaj znalazłem idealny egzemplarz w USA i oszczędziłem około 30% mimo cła i akcyzy.”</p>
           <div class="testi-person">
-            <div class="testi-avatar">PW</div>
-            <div><b>Piotr W.</b><span>Poznań · Jeep Wrangler Rubicon</span></div>
+            <div><b>Piotr W.</b><span>Siedlce · Alfa Romeo Giulia Quadrifoglio</span></div>
           </div>
         </article>
         <article class="testi-card" role="listitem">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>„Dostawa pod dom zaoszczędziła mi wyjazdu do portu. Auto przyjechało umyte, zarejestrowane i gotowe do jazdy następnego dnia.”</p>
+          <p>„Dostawa pod dom zaoszczędziła mi wyjazdu do portu. Challenger przyjechał umyty, zarejestrowany i gotowy do jazdy następnego dnia.”</p>
           <div class="testi-person">
-            <div class="testi-avatar">KS</div>
-            <div><b>Katarzyna S.</b><span>Wrocław · Chevrolet Camaro SS</span></div>
+            <div><b>Katarzyna S.</b><span>Sokołów Podlaski · Dodge Challenger R/T</span></div>
           </div>
         </article>
         <article class="testi-card" role="listitem">
           <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>„Konsultant realnie odradził mi jedno auto po analizie zdjęć uszkodzeń — dzięki temu uniknąłem drogiej naprawy. To buduje zaufanie.”</p>
+          <p>„Konsultant realnie odradził mi jedno auto po analizie zdjęć uszkodzeń — dzięki temu uniknąłem drogiej naprawy. To buduje prawdziwe zaufanie.”</p>
           <div class="testi-person">
-            <div class="testi-avatar">TR</div>
-            <div><b>Tomasz R.</b><span>Gdańsk · Dodge RAM 1500</span></div>
+            <div><b>Tomasz R.</b><span>Siedlce · Jeep Wrangler Rubicon</span></div>
           </div>
         </article>
       </div>
@@ -869,15 +885,18 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   <div class="container footer-grid">
     <div class="footer-brand">
       <a class="brand" href="#hero">
+        <picture>
+        <source srcset="assets/logo-icon.webp" type="image/webp">
         <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
+      </picture>
         <span>Znalezione Sprowadzone</span>
       </a>
       <p>Znalezione Sprowadzone sprowadza auta z amerykańskich aukcji do Polski — licytacja, transport, odprawa i dostawa pod klucz.</p>
       <p class="footer-authorized">Autoryzowany oddział IAA Sokołów Podlaski</p>
       <div class="footer-social">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.6" cy="7.4" r=".6" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M11 10l4 2-4 2v-4z" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+        <a href="https://www.instagram.com/znalezionesprowadzone/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.6" cy="7.4" r=".6" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.tiktok.com/@znalezione.sprowa" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 4v9.5a3.5 3.5 0 1 1-3-3.46"/><path d="M15 4c.4 2.2 2 3.7 4 4"/></svg></a>
       </div>
     </div>
     <div>
@@ -917,6 +936,15 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     Zadzwoń
   </a>
   <a class="btn btn-primary btn-block" href="#kontakt">Bezpłatna wycena</a>
+</div>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Zgoda na pliki cookie" aria-live="polite">
+  <div class="cookie-banner-inner">
+    <p>Ta strona korzysta z plików cookie, aby zapewnić prawidłowe działanie i najlepsze wrażenia użytkownika. Kontynuując przeglądanie, akceptujesz naszą <a href="polityka-prywatnosci.html">Politykę prywatności</a>.</p>
+    <div class="cookie-banner-actions">
+      <button class="btn btn-primary btn-sm" id="cookie-accept" type="button">Akceptuję</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -980,18 +1008,38 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   var prevBtn = document.querySelector(".testi-btn.prev");
   var nextBtn = document.querySelector(".testi-btn.next");
   if (track && prevBtn && nextBtn) {
-    var scrollByCard = function (dir) {
-      var card = track.querySelector(".testi-card");
+    var cards = track.querySelectorAll(".testi-card");
+    var count = cards.length;
+    var current = 0;
+    var cardStep = function () {
       var gap = 24;
-      var amount = card ? card.getBoundingClientRect().width + gap : 320;
-      track.scrollBy({ left: dir * amount, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      return (cards[0] ? cards[0].getBoundingClientRect().width : 320) + gap;
     };
-    prevBtn.addEventListener("click", function () { scrollByCard(-1); });
-    nextBtn.addEventListener("click", function () { scrollByCard(1); });
+    var goTo = function (index) {
+      current = ((index % count) + count) % count;
+      track.scrollTo({ left: current * cardStep(), behavior: prefersReducedMotion ? "auto" : "smooth" });
+    };
+    prevBtn.addEventListener("click", function () { goTo(current - 1); });
+    nextBtn.addEventListener("click", function () { goTo(current + 1); });
   }
 
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  var cookieBanner = document.getElementById("cookie-banner");
+  var cookieAccept = document.getElementById("cookie-accept");
+  if (cookieBanner && cookieAccept) {
+    var consentKey = "zs-cookie-consent";
+    var hasConsent = false;
+    try { hasConsent = !!localStorage.getItem(consentKey); } catch (e) {}
+    if (!hasConsent) {
+      window.setTimeout(function () { cookieBanner.classList.add("is-visible"); }, 700);
+    }
+    cookieAccept.addEventListener("click", function () {
+      cookieBanner.classList.remove("is-visible");
+      try { localStorage.setItem(consentKey, "1"); } catch (e) {}
+    });
+  }
 
   var rotator = document.querySelector(".hero-rotator");
   if (rotator) {
@@ -1021,7 +1069,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         el.textContent = target.toFixed(decimals) + suffix;
         return;
       }
-      var duration = 2600;
+      var duration = 1800;
       var start = null;
       var step = function (ts) {
         if (start === null) start = ts;
