@@ -236,9 +236,14 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .brand{ display:flex; align-items:center; gap:var(--space-3); font-family:var(--font-head); font-weight:800; letter-spacing:.01em; font-size:1.15rem; text-transform:uppercase; color:var(--ink); }
 .brand-mark{ flex:none; width:40px; height:40px; object-fit:contain; }
 .brand small{ display:block; font-family:var(--font-body); font-weight:500; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); }
+.brand-iaa-inline{ display:none; }
 .nav-iaa{ flex:none; display:flex; align-items:center; padding-left:var(--space-4); border-left:1px solid var(--border); }
 .nav-iaa-mark{ display:block; width:auto; height:30px; object-fit:contain; }
-@media (max-width:1140px){ .nav-iaa{ display:none; } }
+@media (max-width:1140px){
+  .nav-iaa{ display:none; }
+  .brand-iaa-inline{ display:inline-block; margin-left:5px; vertical-align:middle; }
+  .brand-iaa-inline img{ display:block; width:auto; height:11px; object-fit:contain; }
+}
 
 .nav-links{ display:flex; align-items:center; gap:var(--space-6); }
 .nav-links a{ font-size:.92rem; font-weight:500; color:var(--ink-soft); position:relative; padding-block:6px; transition:color var(--dur-fast) var(--ease-out); }
@@ -256,6 +261,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   .brand{ font-size:.82rem; gap:var(--space-2); }
   .brand-mark{ width:32px; height:32px; }
   .brand small{ font-size:.52rem; letter-spacing:.08em; }
+  .brand-iaa-inline img{ height:9px; }
   .nav-actions .btn-sm{ display:none; }
 }
 
@@ -473,7 +479,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
           <source srcset="assets/logo-icon.webp" type="image/webp">
           <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
         </picture>
-        <span>Znalezione Sprowadzone<small>Autoryzowany oddział IAA</small></span>
+        <span>Znalezione Sprowadzone<small>Autoryzowany oddział IAA<picture class="brand-iaa-inline"><source srcset="assets/iaa-logo.webp" type="image/webp"><img src="assets/iaa-logo.png" alt="" width="161" height="96"></picture></small></span>
       </a>
       <span class="nav-iaa" aria-hidden="true">
         <picture>
