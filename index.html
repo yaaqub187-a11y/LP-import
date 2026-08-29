@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" as="image" fetchpriority="high" href="assets/hero-porsche.jpg" media="(min-width: 641px)">
+<link rel="preload" as="image" fetchpriority="high" href="assets/hero-porsche-mobile.jpg" media="(max-width: 640px)">
 <title>Znalezione Sprowadzone — Sprowadzamy auta z USA pod klucz</title>
 <meta name="description" content="Znalezione Sprowadzone sprowadza Twoje wymarzone auto z amerykańskich aukcji: licytacja, transport, odprawa celna i dostawa pod dom. Pełna historia CARFAX i transparentny kosztorys bez ukrytych opłat.">
 <meta name="keywords" content="import aut z usa, sprowadzanie samochodów z ameryki, aukcje samochodowe usa, copart, iaai, cło na auto z usa, transport samochodu z usa, znalezione sprowadzone">
@@ -35,11 +37,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap">
+<link rel="preload" as="style" fetchpriority="low" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Titillium+Web:wght@600;700;900&display=swap" rel="stylesheet"></noscript>
-<link rel="preload" as="image" fetchpriority="high" href="assets/hero-porsche.jpg" media="(min-width: 641px)">
-<link rel="preload" as="image" fetchpriority="high" href="assets/hero-porsche-mobile.jpg" media="(max-width: 640px)">
 
 <script type="application/ld+json">
 {
@@ -231,9 +231,14 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   border-bottom:1px solid var(--border-soft);
 }
 .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-5); height:78px; }
+.nav-brand-group{ display:flex; align-items:center; gap:var(--space-4); }
+@media (min-width:1141px){ .nav-brand-group{ flex:none; } }
 .brand{ display:flex; align-items:center; gap:var(--space-3); font-family:var(--font-head); font-weight:800; letter-spacing:.01em; font-size:1.15rem; text-transform:uppercase; color:var(--ink); }
 .brand-mark{ flex:none; width:40px; height:40px; object-fit:contain; }
 .brand small{ display:block; font-family:var(--font-body); font-weight:500; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); }
+.nav-iaa{ flex:none; display:flex; align-items:center; padding-left:var(--space-4); border-left:1px solid var(--border); }
+.nav-iaa-mark{ display:block; width:auto; height:30px; object-fit:contain; }
+@media (max-width:1140px){ .nav-iaa{ display:none; } }
 
 .nav-links{ display:flex; align-items:center; gap:var(--space-6); }
 .nav-links a{ font-size:.92rem; font-weight:500; color:var(--ink-soft); position:relative; padding-block:6px; transition:color var(--dur-fast) var(--ease-out); }
@@ -246,7 +251,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .nav-phone svg{ width:16px; height:16px; color:var(--red); }
 .nav-toggle{ display:none; align-items:center; justify-content:center; width:44px; height:44px; border-radius:var(--radius-sm); color:var(--ink); }
 .nav-toggle svg{ width:24px; height:24px; }
-@media (max-width:960px){ .nav-links, .nav-phone{ display:none; } .nav-toggle{ display:inline-flex; } }
+@media (max-width:1140px){ .nav-links, .nav-phone{ display:none; } .nav-toggle{ display:inline-flex; } }
 @media (max-width:480px){
   .brand{ font-size:.82rem; gap:var(--space-2); }
   .brand-mark{ width:32px; height:32px; }
@@ -415,8 +420,9 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 @media (max-width:480px){ .footer-grid{ grid-template-columns:1fr; } }
 .footer-brand{ color:var(--ink); }
 .footer-brand p{ margin-top:var(--space-4); font-size:.88rem; max-width:32ch; color:var(--ink-soft); }
-.footer-authorized{ display:inline-flex; align-items:center; gap:6px; margin-top:var(--space-3) !important; padding:6px 12px; border-radius:var(--radius-pill); background:var(--red-tint); color:var(--red-deep); font-size:.78rem; font-weight:600; max-width:none !important; }
-.footer h4{ color:var(--ink); font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; margin-bottom:var(--space-4); }
+.footer-authorized{ display:inline-flex; align-items:center; gap:8px; margin-top:var(--space-3) !important; padding:6px 14px 6px 8px; border-radius:var(--radius-pill); background:var(--red-tint); color:var(--red-deep); font-size:.78rem; font-weight:600; max-width:none !important; }
+.footer-iaa-mark{ display:block; width:auto; height:20px; object-fit:contain; }
+.footer h3{ color:var(--ink); font-size:.85rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:var(--space-4); }
 .footer ul li{ margin-bottom:var(--space-3); }
 .footer a{ font-size:.9rem; transition:color var(--dur-fast) var(--ease-out); }
 .footer a:hover{ color:var(--red); }
@@ -440,6 +446,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   box-shadow:0 -8px 24px -8px rgba(16,24,40,.25);
 }
 .cookie-banner.is-visible{ transform:translateY(0); }
+.cookie-banner.is-dismissed{ pointer-events:none; }
 .cookie-banner-inner{ max-width:var(--container); margin-inline:auto; display:flex; align-items:center; justify-content:space-between; gap:var(--space-5); flex-wrap:wrap; }
 .cookie-banner p{ margin:0; font-size:.85rem; line-height:1.5; color:rgba(255,255,255,.82); max-width:70ch; }
 .cookie-banner a{ color:#fff; text-decoration:underline; text-underline-offset:2px; }
@@ -460,13 +467,21 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#hero">
-      <picture>
-        <source srcset="assets/logo-icon.webp" type="image/webp">
-        <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
-      </picture>
-      <span>Znalezione Sprowadzone<small>Autoryzowany oddział IAA</small></span>
-    </a>
+    <div class="nav-brand-group">
+      <a class="brand" href="#hero">
+        <picture>
+          <source srcset="assets/logo-icon.webp" type="image/webp">
+          <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
+        </picture>
+        <span>Znalezione Sprowadzone<small>Autoryzowany oddział IAA</small></span>
+      </a>
+      <span class="nav-iaa" aria-hidden="true">
+        <picture>
+          <source srcset="assets/iaa-logo.webp" type="image/webp">
+          <img src="assets/iaa-logo.png" alt="" width="161" height="96" class="nav-iaa-mark">
+        </picture>
+      </span>
+    </div>
 
     <nav class="nav-links" aria-label="Menu główne">
       <a href="#jak-to-dziala">Jak to działa</a>
@@ -892,7 +907,13 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
         <span>Znalezione Sprowadzone</span>
       </a>
       <p>Znalezione Sprowadzone sprowadza auta z amerykańskich aukcji do Polski — licytacja, transport, odprawa i dostawa pod klucz.</p>
-      <p class="footer-authorized">Autoryzowany oddział IAA Sokołów Podlaski</p>
+      <p class="footer-authorized">
+        <picture>
+          <source srcset="assets/iaa-logo.webp" type="image/webp">
+          <img src="assets/iaa-logo.png" alt="" width="161" height="96" class="footer-iaa-mark">
+        </picture>
+        Autoryzowany oddział IAA Sokołów Podlaski
+      </p>
       <div class="footer-social">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
         <a href="https://www.instagram.com/znalezionesprowadzone/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><circle cx="16.6" cy="7.4" r=".6" fill="currentColor" stroke="none"/></svg></a>
@@ -900,7 +921,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
       </div>
     </div>
     <div>
-      <h4>Nawigacja</h4>
+      <h3>Nawigacja</h3>
       <ul>
         <li><a href="#jak-to-dziala">Jak to działa</a></li>
         <li><a href="#koszty">Koszty</a></li>
@@ -909,7 +930,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
       </ul>
     </div>
     <div>
-      <h4>Firma</h4>
+      <h3>Firma</h3>
       <ul>
         <li><a href="#kontakt">Kontakt</a></li>
         <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
@@ -917,7 +938,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
       </ul>
     </div>
     <div>
-      <h4>Kontakt</h4>
+      <h3>Kontakt</h3>
       <ul>
         <li><a href="tel:+48888880398">Kontakt · 888 880 398</a></li>
         <li><a href="mailto:kontakt@znalezionesprowadzone.pl">kontakt@znalezionesprowadzone.pl</a></li>
@@ -1032,11 +1053,15 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     var consentKey = "zs-cookie-consent";
     var hasConsent = false;
     try { hasConsent = !!localStorage.getItem(consentKey); } catch (e) {}
-    if (!hasConsent) {
+    if (hasConsent) {
+      cookieBanner.style.display = "none";
+    } else {
       window.setTimeout(function () { cookieBanner.classList.add("is-visible"); }, 700);
     }
     cookieAccept.addEventListener("click", function () {
       cookieBanner.classList.remove("is-visible");
+      cookieBanner.classList.add("is-dismissed");
+      window.setTimeout(function () { cookieBanner.style.display = "none"; }, 400);
       try { localStorage.setItem(consentKey, "1"); } catch (e) {}
     });
   }
