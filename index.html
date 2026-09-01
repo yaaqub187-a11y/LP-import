@@ -287,10 +287,9 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
   .hero .lead{ font-size:.98rem; }
 }
 .hero-photo{
-  position:absolute; inset:-2%; z-index:0; pointer-events:none;
+  position:absolute; inset:0; z-index:0; pointer-events:none;
   background-image:url("assets/hero-porsche.jpg");
   background-size:cover; background-position:center 58%; background-repeat:no-repeat;
-  filter:blur(1.1px) brightness(.86) saturate(1.05);
 }
 @media (max-width:640px){ .hero-photo{ background-image:url("assets/hero-porsche-mobile.jpg"); } }
 .hero-dim{
@@ -302,7 +301,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
     linear-gradient(180deg, rgba(5,6,9,.28) 0%, rgba(5,6,9,.18) 38%, rgba(5,6,9,.68) 100%);
 }
 @media (max-width:640px){
-  .hero-photo{ filter:blur(.9px) brightness(.82) saturate(1.05); background-position:center 52%; }
+  .hero-photo{ background-position:center 52%; }
   .hero-dim{ background:
     radial-gradient(560px 420px at 50% 26%, rgba(3,4,7,.64) 0%, rgba(3,4,7,.36) 50%, transparent 78%),
     radial-gradient(1200px 700px at 15% 115%, rgba(255,106,0,.12), transparent 60%),
@@ -342,7 +341,9 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .hero-stat{ text-align:center; min-width:0; }
 .hero-stat b{ display:block; font-family:var(--font-head); font-weight:600; font-size:clamp(1.5rem, 1.25rem + 1.1vw, 1.95rem); line-height:1.1; color:#fff; font-variant-numeric:tabular-nums; }
 .hero-stat > span{ display:block; font-size:.92rem; font-weight:500; color:rgba(255,255,255,.68); margin-top:var(--space-2); }
-@media (max-width:720px){ .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); padding:var(--space-5) var(--space-4); } }
+@media (max-width:720px){
+  .hero-stats{ grid-template-columns:repeat(2,1fr); row-gap:var(--space-6); padding:var(--space-5) var(--space-4); background:rgba(6,7,12,.78); backdrop-filter:none; -webkit-backdrop-filter:none; }
+}
 
 /* Trust strip */
 .trust-strip{ background:var(--paper-alt); border-block:1px solid var(--border-soft); }
@@ -465,6 +466,27 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
 .reveal.is-visible{ opacity:1; transform:translateY(0); }
 .reveal-stagger > *{ transition-delay:calc(var(--i,0) * 70ms); }
 @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; } }
+
+/* Defer offscreen rendering to speed up initial mobile paint */
+.trust-strip, #dlaczego, #jak-to-dziala, #koszty, #opinie, #faq, #kontakt, .footer{ content-visibility:auto; }
+.trust-strip{ contain-intrinsic-size:auto 112px; }
+#dlaczego{ contain-intrinsic-size:auto 844px; }
+#jak-to-dziala{ contain-intrinsic-size:auto 647px; }
+#koszty{ contain-intrinsic-size:auto 1452px; }
+#opinie{ contain-intrinsic-size:auto 710px; }
+#faq{ contain-intrinsic-size:auto 1013px; }
+#kontakt{ contain-intrinsic-size:auto 792px; }
+.footer{ contain-intrinsic-size:auto 500px; }
+@media (max-width:640px){
+  .trust-strip{ contain-intrinsic-size:auto 286px; }
+  #dlaczego{ contain-intrinsic-size:auto 1584px; }
+  #jak-to-dziala{ contain-intrinsic-size:auto 1282px; }
+  #koszty{ contain-intrinsic-size:auto 1553px; }
+  #opinie{ contain-intrinsic-size:auto 708px; }
+  #faq{ contain-intrinsic-size:auto 1159px; }
+  #kontakt{ contain-intrinsic-size:auto 1259px; }
+  .footer{ contain-intrinsic-size:auto 1125px; }
+}
 </style>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}.mobile-menu{display:none !important;}</style></noscript>
 </head>
@@ -908,7 +930,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
       <a class="brand" href="#hero">
         <picture>
         <source srcset="assets/logo-icon.webp" type="image/webp">
-        <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark">
+        <img src="assets/logo-icon.png" alt="" width="40" height="40" class="brand-mark" loading="lazy" decoding="async">
       </picture>
         <span>Znalezione Sprowadzone</span>
       </a>
@@ -916,7 +938,7 @@ h1,h2,h3,h4{ font-family:var(--font-head); font-weight:700; letter-spacing:-.01e
       <p class="footer-authorized">
         <picture>
           <source srcset="assets/iaa-logo.webp" type="image/webp">
-          <img src="assets/iaa-logo.png" alt="" width="161" height="96" class="footer-iaa-mark">
+          <img src="assets/iaa-logo.png" alt="" width="161" height="96" class="footer-iaa-mark" loading="lazy" decoding="async">
         </picture>
         Autoryzowany oddział IAA Sokołów Podlaski
       </p>
